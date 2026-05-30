@@ -5,6 +5,7 @@
 
 [node name="Pedwin" type="PathFollow2D" unique_id=2063384244]
 rotates = false
+loop = false
 script = ExtResource("1_n05or")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=8882922]
