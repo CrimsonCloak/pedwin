@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bhnqp8see2fnr"]
+
+[ext_resource type="Texture2D" uid="uid://cd1km3f1i5gd" path="res://Assets/Background.png" id="1_qxrlw"]
+[ext_resource type="Script" uid="uid://cur77xedsl4gn" path="res://Scenes/game.gd" id="1_wrm1d"]
+
+[sub_resource type="Curve2D" id="Curve2D_qxrlw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 136, 593, 0, 0, 0, 0, 120, 279, 0, 0, 0, 0, 141, 119, 0, 0, 0, 0, 213, 102, 0, 0, 0, 0, 279, 91, 0, 0, 0, 0, 564, 79, 0, 0, 0, 0, 614, 100, 0, 0, 0, 0, 625, 244, 0, 0, 0, 0, 534, 270, 0, 0, 0, 0, 418, 266, 0, 0, 0, 0, 268, 284, 0, 0, 0, 0, 257, 586, 0, 0, 0, 0, 345, 596, 0, 0, 0, 0, 421, 580, 0, 0, 0, 0, 421, 406, 0, 0, 0, 0, 560, 389, 0, 0, 0, 0, 683, 400, 0, 0, 0, 0, 698, 459, 0, 0, 0, 0, 695, 559, 0, 0, 0, 0, 763, 583, 0, 0, 0, 0, 836, 571, 0, 0, 0, 0, 826, 89, 0, 0, 0, 0, 1112, 75, 0, 0, 0, 0, 1102, 312, 0, 0, 0, 0, 1105, 432, 0, 0, 0, 0, 1101, 563)
+}
+point_count = 26
+
+[node name="Game" type="Node2D" unique_id=1903733899]
+script = ExtResource("1_wrm1d")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1396405459]
+position = Vector2(576.6667, 330)
+scale = Vector2(0.59444445, 0.59444445)
+texture = ExtResource("1_qxrlw")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1841170749]
+curve = SubResource("Curve2D_qxrlw")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1759072209]
+wait_time = 2.0
+autostart = true

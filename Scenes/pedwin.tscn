@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bo3re87ml45n1"]
+
+[ext_resource type="Texture2D" uid="uid://c3m2fo3leck3e" path="res://Assets/Pedwin/Pedwin1.png" id="1_ftnmm"]
+[ext_resource type="Script" uid="uid://bw52oqjtx07kv" path="res://Scenes/pedwin.gd" id="1_n05or"]
+
+[node name="Pedwin" type="PathFollow2D" unique_id=2063384244]
+rotates = false
+script = ExtResource("1_n05or")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=8882922]
+texture = ExtResource("1_ftnmm")
