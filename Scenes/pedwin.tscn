@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bo3re87ml45n1"]
 
 [ext_resource type="Texture2D" uid="uid://c3m2fo3leck3e" path="res://Assets/Pedwin/Pedwin1.png" id="1_ftnmm"]
-[ext_resource type="Script" uid="uid://bw52oqjtx07kv" path="res://Scenes/pedwin.gd" id="1_n05or"]
+[ext_resource type="Script" uid="uid://bw52oqjtx07kv" path="res://Scripts/pedwin.gd" id="1_n05or"]
+[ext_resource type="Texture2D" uid="uid://ba146lhtoldgi" path="res://Assets/Pedwin/PedwinHealthBar.png" id="3_ovojk"]
+[ext_resource type="Script" uid="uid://ba0qplxsbvaiu" path="res://Scripts/health_bar.gd" id="3_vyeco"]
 
 [node name="Pedwin" type="PathFollow2D" unique_id=2063384244]
 rotates = false
@@ -10,3 +12,15 @@ script = ExtResource("1_n05or")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=8882922]
 texture = ExtResource("1_ftnmm")
+
+[node name="healthBar" type="TextureProgressBar" parent="." unique_id=590587986 node_paths=PackedStringArray("pedwin")]
+offset_left = -16.0
+offset_top = -42.0
+offset_right = 16.0
+offset_bottom = -34.0
+fill_mode = 1
+texture_under = ExtResource("3_ovojk")
+texture_over = ExtResource("3_ovojk")
+texture_progress = ExtResource("3_ovojk")
+script = ExtResource("3_vyeco")
+pedwin = NodePath("..")

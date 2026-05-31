@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhnqp8see2fnr"]
 
 [ext_resource type="Texture2D" uid="uid://cd1km3f1i5gd" path="res://Assets/Background.png" id="1_qxrlw"]
-[ext_resource type="Script" uid="uid://cur77xedsl4gn" path="res://Scenes/game.gd" id="1_wrm1d"]
+[ext_resource type="Script" uid="uid://cur77xedsl4gn" path="res://Scripts/game.gd" id="1_wrm1d"]
 
 [sub_resource type="Curve2D" id="Curve2D_qxrlw"]
 _data = {
@@ -21,7 +21,6 @@ texture = ExtResource("1_qxrlw")
 curve = SubResource("Curve2D_qxrlw")
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=1759072209]
-wait_time = 5.0
 
 [node name="StartButton" type="Button" parent="." unique_id=307434285]
 offset_left = 475.0

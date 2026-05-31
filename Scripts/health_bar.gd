@@ -1,13 +1,14 @@
-extends PathFollow2D
-@export var speed: float = 100.0
+extends TextureProgressBar
+@export var pedwin: PathFollow2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	pedwin.healthChanged.connect(updateHealth)
+	#updateHealth()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	progress += delta * speed
-	if progress_ratio >= 1.0:
-		queue_free()
+	pass
+
+func updateHealth():
+	value = pedwin.health * 100 / pedwin.maxHealth
