@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Tower_defence_game"
+config/name="Pedwin"
 run/main_scene="uid://bhnqp8see2fnr"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
