@@ -12,3 +12,6 @@ func _process(delta: float) -> void:
 
 func updateHealth():
 	value = pedwin.health * 100 / pedwin.maxHealth
+	print("Update health ran! Value: " + str(value) )
+	print("Pedwin Health:" + str(pedwin.health))
+	print("Pedwin MaxHealth:" + str(pedwin.maxHealth))
