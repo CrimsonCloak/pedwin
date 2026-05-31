@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dkw5vly58pql7"]
+
+[ext_resource type="Script" uid="uid://28lqxkvw772d" path="res://Scenes/spodr_cocoon.gd" id="1_7nus5"]
+[ext_resource type="Texture2D" uid="uid://bpiimr5fu80t" path="res://Assets/Spodr/Cocoon_goal.png" id="1_s0vxa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dmjp0"]
+radius = 116.01724
+
+[node name="SpodrCocoon" type="Node2D" unique_id=1468247977]
+script = ExtResource("1_7nus5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=924474797]
+texture = ExtResource("1_s0vxa")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=183419809]
+
+[node name="AttackRange" type="CollisionShape2D" parent="Area2D" unique_id=994752728]
+shape = SubResource("CircleShape2D_dmjp0")
+debug_color = Color(0.7909608, 0.32397082, 0.7167154, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=71211925]
+wait_time = 2.0
+one_shot = true
+autostart = true

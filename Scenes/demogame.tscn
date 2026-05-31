@@ -2,19 +2,20 @@
 
 [ext_resource type="Script" uid="uid://cur77xedsl4gn" path="res://Scripts/game.gd" id="1_u22c3"]
 [ext_resource type="Texture2D" uid="uid://cd1km3f1i5gd" path="res://Assets/Background.png" id="2_8vyj5"]
+[ext_resource type="PackedScene" uid="uid://dkw5vly58pql7" path="res://Scenes/spodr_cocoon.tscn" id="3_8vyj5"]
 
 [sub_resource type="Curve2D" id="Curve2D_qxrlw"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 136, 593, 0, 0, 0, 0, 120, 279, 0, 0, 0, 0, 141, 119, 0, 0, 0, 0, 213, 102, 0, 0, 0, 0, 279, 91, 0, 0, 0, 0, 564, 79, 0, 0, 0, 0, 614, 100, 0, 0, 0, 0, 625, 244, 0, 0, 0, 0, 534, 270, 0, 0, 0, 0, 418, 266, 0, 0, 0, 0, 268, 284, 0, 0, 0, 0, 257, 586, 0, 0, 0, 0, 345, 596, 0, 0, 0, 0, 421, 580, 0, 0, 0, 0, 421, 406, 0, 0, 0, 0, 560, 389, 0, 0, 0, 0, 683, 400, 0, 0, 0, 0, 698, 459, 0, 0, 0, 0, 695, 559, 0, 0, 0, 0, 763, 583, 0, 0, 0, 0, 836, 571, 0, 0, 0, 0, 826, 89, 0, 0, 0, 0, 1112, 75, 0, 0, 0, 0, 1102, 312, 0, 0, 0, 0, 1105, 432, 0, 0, 0, 0, 1106, 571)
+"points": PackedVector2Array(0, 0, 0, 0, 136, 593, 0, 0, 0, 0, 120, 279, 0, 0, 0, 0, 133, 116, 0, 0, 0, 0, 213, 102, 0, 0, 0, 0, 279, 91, 0, 0, 0, 0, 547, 62, 0, 0, 0, 0, 614, 100, 0, 0, 0, 0, 625, 244, 0, 0, 0, 0, 534, 270, 0, 0, 0, 0, 418, 266, 0, 0, 0, 0, 267, 270, 0, 0, 0, 0, 257, 586, 0, 0, 0, 0, 345, 596, 0, 0, 0, 0, 421, 580, 0, 0, 0, 0, 421, 406, 0, 0, 0, 0, 560, 389, 0, 0, 0, 0, 683, 400, 0, 0, 0, 0, 698, 459, 0, 0, 0, 0, 695, 559, 0, 0, 0, 0, 763, 583, 0, 0, 0, 0, 848, 561, 0, 0, 0, 0, 831, 338, 0, 0, 0, 0, 829, 73, 0, 0, 0, 0, 1118, 70, 0, 0, 0, 0, 1106, 306, 0, 0, 0, 0, 1116, 423, 0, 0, 0, 0, 1113, 570)
 }
-point_count = 26
+point_count = 27
 
 [node name="Game" type="Node2D" unique_id=1903733899]
 script = ExtResource("1_u22c3")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1396405459]
-position = Vector2(576.6667, 330)
-scale = Vector2(0.59444445, 0.59444445)
+position = Vector2(577, 325)
+scale = Vector2(0.6009259, 0.6009259)
 texture = ExtResource("2_8vyj5")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1841170749]
@@ -24,8 +25,11 @@ curve = SubResource("Curve2D_qxrlw")
 wait_time = 5.0
 
 [node name="StartButton" type="Button" parent="." unique_id=307434285]
-offset_left = 475.0
-offset_top = 453.0
-offset_right = 645.0
-offset_bottom = 512.0
+offset_left = 468.0
+offset_top = 452.0
+offset_right = 638.0
+offset_bottom = 511.0
 text = "Start Pedwinvasion"
+
+[node name="SpodrCocoon" parent="." unique_id=1468247977 instance=ExtResource("3_8vyj5")]
+position = Vector2(190, 352)
