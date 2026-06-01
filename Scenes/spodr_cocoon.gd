@@ -1,6 +1,7 @@
 extends Node2D
 
 var cd_timer: Timer
+var tower_damage: int = 1
 var pedwin_in_range: bool
 var cooldown_ready: bool = true
 var targetedPedwin: PathFollow2D
@@ -13,12 +14,13 @@ func _process(delta: float) -> void:
 	pedwin_in_range = detect_pedwin()
 	print("Pedwin in range:" + str(pedwin_in_range))
 	if pedwin_in_range == true && cooldown_ready == true:
+		detect_pedwin()
 		attack_enemy(targetedPedwin)
 		cooldown_ready = false
 
 func attack_enemy(target):
 	print("Attack Pedwin!")
-	targetedPedwin.takeDamage(1)
+	targetedPedwin.takeDamage(tower_damage)
 	cd_timer.start()
 
 func reset_cooldown():
@@ -44,6 +46,6 @@ func detect_pedwin() -> bool:
 			if pedwin.progress > furthest_pedwin_distance:
 				furthest_pedwin_distance = pedwin.progress
 				targetedPedwin = pedwin
-			return true
+		return true
 	return false
 	# Return
