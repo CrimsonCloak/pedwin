@@ -22,7 +22,6 @@ texture = ExtResource("2_8vyj5")
 curve = SubResource("Curve2D_qxrlw")
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=1759072209]
-wait_time = 5.0
 
 [node name="StartButton" type="Button" parent="." unique_id=307434285]
 offset_left = 468.0

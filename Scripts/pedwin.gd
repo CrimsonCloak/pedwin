@@ -11,7 +11,7 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if $Sprite2D.is_pixel_opaque(get_local_mouse_position()):
-				takedamage(1)
+				takeDamage(1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:	
@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 	if progress_ratio >= 1.0:
 		queue_free()
 
-func takedamage(damage: int) -> void:
+func takeDamage(damage: int) -> void:
 	health -= damage
 	update_health()
 	if health <= 0:

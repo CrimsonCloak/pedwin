@@ -2,24 +2,28 @@ extends Node2D
 
 var cd_timer: Timer
 var pedwin_in_range: bool
+var cooldown_ready: bool = true
 var targetedPedwin: PathFollow2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	cd_timer = $Timer
-
+	cd_timer.timeout.connect(reset_cooldown)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pedwin_in_range = detect_pedwin()
 	print("Pedwin in range:" + str(pedwin_in_range))
-	if pedwin_in_range == true:
+	if pedwin_in_range == true && cooldown_ready == true:
 		attack_enemy(targetedPedwin)
+		cooldown_ready = false
 
 func attack_enemy(target):
-	if not cd_timer.is_stopped() && pedwin_in_range == true:
-		return # We are still on cooldown
-	# Do ability stuff here
 	print("Attack Pedwin!")
+	targetedPedwin.takeDamage(1)
 	cd_timer.start()
+
+func reset_cooldown():
+		cooldown_ready = true
+
 
 func detect_pedwin() -> bool:
 	# Detect a collision with a PathFollow2D (AKA Pedwin enemy)
