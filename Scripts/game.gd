@@ -1,6 +1,4 @@
 extends Node2D
-
-
 var pedwin_prefab: PackedScene = preload("res://Scenes/pedwin.tscn")
 @onready var path: Path2D = $Path2D
 @onready var button: Button = $StartButton
