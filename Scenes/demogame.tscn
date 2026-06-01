@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cur77xedsl4gn" path="res://Scripts/game.gd" id="1_u22c3"]
 [ext_resource type="Texture2D" uid="uid://cd1km3f1i5gd" path="res://Assets/Background.png" id="2_8vyj5"]
-[ext_resource type="PackedScene" uid="uid://dkw5vly58pql7" path="res://Scenes/spodr_cocoon.tscn" id="3_8vyj5"]
+[ext_resource type="PackedScene" uid="uid://dcgd821vn4q86" path="res://Scenes/empty_plot.tscn" id="3_8vyj5"]
 
 [sub_resource type="Curve2D" id="Curve2D_qxrlw"]
 _data = {
@@ -31,11 +31,14 @@ offset_right = 638.0
 offset_bottom = 511.0
 text = "Start Pedwinvasion"
 
-[node name="SpodrCocoon" parent="." unique_id=1468247977 instance=ExtResource("3_8vyj5")]
-position = Vector2(190, 352)
+[node name="EmptyPlot" parent="." unique_id=1246639761 instance=ExtResource("3_8vyj5")]
+position = Vector2(190, 382)
 
-[node name="SpodrCocoon3" parent="." unique_id=2108573465 instance=ExtResource("3_8vyj5")]
-position = Vector2(346, 507)
+[node name="EmptyPlot2" parent="." unique_id=57446797 instance=ExtResource("3_8vyj5")]
+position = Vector2(522, 160)
 
-[node name="SpodrCocoon2" parent="." unique_id=80177256 instance=ExtResource("3_8vyj5")]
-position = Vector2(252, 191)
+[node name="EmptyPlot3" parent="." unique_id=513063679 instance=ExtResource("3_8vyj5")]
+position = Vector2(336, 517)
+
+[node name="EmptyPlot4" parent="." unique_id=1249612798 instance=ExtResource("3_8vyj5")]
+position = Vector2(769, 497)

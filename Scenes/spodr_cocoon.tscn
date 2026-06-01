@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkw5vly58pql7"]
 
-[ext_resource type="Script" uid="uid://28lqxkvw772d" path="res://Scenes/spodr_cocoon.gd" id="1_7nus5"]
+[ext_resource type="Script" uid="uid://28lqxkvw772d" path="res://Scripts/spodr_cocoon.gd" id="1_7nus5"]
 [ext_resource type="Texture2D" uid="uid://bpiimr5fu80t" path="res://Assets/Spodr/Cocoon_goal.png" id="1_s0vxa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dmjp0"]

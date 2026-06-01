@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dcgd821vn4q86"]
+
+[ext_resource type="Texture2D" uid="uid://b26x1ui27a73d" path="res://Assets/Spodr/Empty_Spider_Plot.png" id="1_kj7om"]
+[ext_resource type="Script" uid="uid://c8hywxlus7dss" path="res://Scripts/empty_plot.gd" id="1_xult4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kj7om"]
+size = Vector2(68.5, 63.375)
+
+[node name="EmptyPlot" type="Node2D" unique_id=1246639761]
+script = ExtResource("1_xult4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1648590215]
+texture = ExtResource("1_kj7om")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1481646011]
+
+[node name="Clickable_Area" type="CollisionShape2D" parent="Area2D" unique_id=1414875457]
+visible = false
+shape = SubResource("RectangleShape2D_kj7om")
