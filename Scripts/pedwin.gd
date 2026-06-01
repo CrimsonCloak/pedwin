@@ -9,11 +9,11 @@ func _ready() -> void:
 	health = maxHealth
 	gameManager = get_node("/root/Game/GameManager")
 
-func _input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			if $Sprite2D.is_pixel_opaque(get_local_mouse_position()):
-				takeDamage(1)
+#func _input(event):
+	#if event is InputEventMouseButton:
+		#if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			#if $Sprite2D.is_pixel_opaque(get_local_mouse_position()):
+				#takeDamage(1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:	
