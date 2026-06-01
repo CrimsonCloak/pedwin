@@ -8,7 +8,7 @@ var pedwin_wave_size: int
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	button.pressed.connect (_button_pressed)
-	pedwin_wave_size = 100
+	pedwin_wave_size = 10
 
 func _button_pressed():
 	$SpawnTimer.timeout.connect(spawn_enemy)

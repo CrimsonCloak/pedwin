@@ -22,6 +22,7 @@ texture = ExtResource("2_8vyj5")
 curve = SubResource("Curve2D_qxrlw")
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=1759072209]
+wait_time = 1.5
 
 [node name="StartButton" type="Button" parent="." unique_id=307434285]
 offset_left = 468.0
@@ -32,3 +33,9 @@ text = "Start Pedwinvasion"
 
 [node name="SpodrCocoon" parent="." unique_id=1468247977 instance=ExtResource("3_8vyj5")]
 position = Vector2(190, 352)
+
+[node name="SpodrCocoon3" parent="." unique_id=2108573465 instance=ExtResource("3_8vyj5")]
+position = Vector2(346, 507)
+
+[node name="SpodrCocoon2" parent="." unique_id=80177256 instance=ExtResource("3_8vyj5")]
+position = Vector2(252, 191)

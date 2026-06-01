@@ -19,5 +19,4 @@ shape = SubResource("CircleShape2D_dmjp0")
 debug_color = Color(0.7909608, 0.32397082, 0.7167154, 0.41960785)
 
 [node name="Timer" type="Timer" parent="." unique_id=71211925]
-wait_time = 5.0
 autostart = true

@@ -32,7 +32,7 @@ func detect_pedwin() -> bool:
 	# Get all bodies inside Area2D
 	var bodies = $Area2D.get_overlapping_areas()
 
-	if not bodies.is_empty():
+	if not bodies.is_empty() && contains_pedwin(bodies):
 		# Filter them on Pedwins, which are always PathFollow2D.
 		print("Penguins in bodies: "+ str(bodies))
 		var pedwins: Array[PathFollow2D]
@@ -49,3 +49,10 @@ func detect_pedwin() -> bool:
 		return true
 	return false
 	# Return
+
+func contains_pedwin(arrayOfAreas) -> bool:
+	var pedwin_present = false
+	for area in arrayOfAreas:
+		if area.get_parent() is PathFollow2D:
+			pedwin_present = true
+	return pedwin_present
