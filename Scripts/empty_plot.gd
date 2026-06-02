@@ -21,18 +21,16 @@ func _input(event):
 				spawn_spodr_cocoon()
 
 func on_mouse_enter():
-	print("Mouse entered")
 	apply_shader()
 
 func on_mouse_exit():
-	print("Mouse exited")
 	unset_shader()
 
 func update_fish_cost_visual():
 	$Purchase_UI/FishCounterText.text = str(gameManager.fishCostTower)
 
 func apply_shader():
-	var shader = load("res://Assets/Shaders/highlight.gdshader")
+	var shader = load("res://Assets/Shaders/highlight_black.gdshader")
 	var material := ShaderMaterial.new()
 	material.shader = shader
 	$Sprite2D.material = material
