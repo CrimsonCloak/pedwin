@@ -3,6 +3,7 @@ extends Node2D
 @export var pedwinsAlive: int
 @export var pedwinsKilled: int = 0
 @export var pedwins_per_wave: int = 10
+@export var fishCostTower: int = 50
 # Called when the node enters the scene tree for the first time.
 var levelhud
 func _ready() -> void:
