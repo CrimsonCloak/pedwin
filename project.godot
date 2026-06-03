@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Pedwin"
-run/main_scene="uid://bhnqp8see2fnr"
+run/main_scene="uid://brkucpi3rtttu"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
