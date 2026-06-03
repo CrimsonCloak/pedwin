@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://brkucpi3rtttu"]
+
+[ext_resource type="Texture2D" uid="uid://cd1km3f1i5gd" path="res://Assets/Background.png" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://dtfxearnict7v" path="res://Scripts/startmenu_buttons.gd" id="2_xhh6f"]
+
+[node name="Menu" type="Node2D" unique_id=1607660690]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=900643263]
+position = Vector2(577, 324)
+scale = Vector2(0.6009259, 0.6009259)
+texture = ExtResource("1_1rerr")
+
+[node name="UI_elements" type="HBoxContainer" parent="Background" unique_id=2086386066]
+offset_left = -482.58856
+offset_top = -46.59478
+offset_right = 370.9093
+offset_bottom = 43.26658
+theme_override_constants/separation = 28
+alignment = 1
+script = ExtResource("2_xhh6f")
+
+[node name="Start Button" type="Button" parent="Background/UI_elements" unique_id=2079672986]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Start game"
+
+[node name="Quit Button" type="Button" parent="Background/UI_elements" unique_id=383656718]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quit game"
+
+[node name="Credits Button" type="Button" parent="Background/UI_elements" unique_id=815989697]
+visible = false
+layout_mode = 2
+text = "Test for something or somesuch"
+
+[node name="Label" type="Label" parent="." unique_id=1552969544]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 336.0
+offset_top = 103.0
+offset_right = 750.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 86
+text = "PEDWIN"
+horizontal_alignment = 1
+vertical_alignment = 1

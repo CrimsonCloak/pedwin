@@ -36,7 +36,7 @@ func set_victory_text():
 	button.disabled = false
 	
 func level_completed():
-	get_tree().quit() # TODO: replace with main menu return function
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn") # TODO: replace with main menu return function
 	
 
 func play_victory_music():
