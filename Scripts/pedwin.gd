@@ -1,13 +1,13 @@
 extends PathFollow2D
 @export var speed: float = 100.0
-@export var maxHealth: int = 2
+@export var max_health: int = 2
 @export var health: int
-@export var fishValue: int = 10
-@export var gameManager = Node2D
+@export var fish_value: int = 10
+@export var game_manager = Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	health = maxHealth
-	gameManager = get_node("/root/Game/GameManager")
+	health = max_health
+	game_manager = get_node("/root/Game/GameManager")
 
 #func _input(event):
 	#if event is InputEventMouseButton:
@@ -21,13 +21,13 @@ func _process(delta: float) -> void:
 	if progress_ratio >= 1.0:
 		queue_free()
 
-func takeDamage(damage: int) -> void:
+func take_damage(damage: int) -> void:
 	health -= damage
 	update_health()
 	if health <= 0:
 		queue_free()
-		gameManager.gain_fish(fishValue)
-		gameManager.pedwinsKilled += 1
+		game_manager.gain_fish(fish_value)
+		game_manager.pedwins_killed += 1
 
 func update_health():
 	$healthBar.value = health

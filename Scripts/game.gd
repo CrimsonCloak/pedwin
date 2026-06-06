@@ -3,13 +3,13 @@ var pedwin_prefab: PackedScene = preload("res://Scenes/pedwin.tscn")
 @onready var path: Path2D = $Path2D
 @onready var button: Button = $StartButton
 var pedwin_wave_size: int
-var gameManager
-var victoryConditionsMet: bool
+var game_manager
+var victory_conditions_met: bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	button.pressed.connect (_button_pressed)
-	gameManager = get_node("/root/Game/GameManager")
-	pedwin_wave_size = gameManager.pedwins_per_wave
+	game_manager = get_node("/root/Game/GameManager")
+	pedwin_wave_size = game_manager.pedwins_per_wave
 
 func _button_pressed():
 	$SpawnTimer.timeout.connect(spawn_enemy)
@@ -27,7 +27,7 @@ func spawn_enemy():
 	if pedwin_wave_size == 0:
 		$SpawnTimer.stop()
 		
-		if gameManager.pedwinsAlive == 0:
+		if game_manager.pedwins_alive == 0:
 			victory()
 			play_victory_music()
 		
@@ -37,9 +37,9 @@ func set_pedwin_wave_text(wave_size_remaining):
 		button.text = "All reinforcements deployed!"
 
 func check_victory_condition():
-	if pedwin_wave_size == 0 && gameManager.pedwinsAlive == 0:
-		victoryConditionsMet = true
-	if victoryConditionsMet:
+	if pedwin_wave_size == 0 && game_manager.pedwins_alive == 0:
+		victory_conditions_met = true
+	if victory_conditions_met:
 		victory()
 
 func victory():

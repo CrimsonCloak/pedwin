@@ -4,7 +4,7 @@ var cd_timer: Timer
 var tower_damage: int = 1
 var pedwin_in_range: bool
 var cooldown_ready: bool = true
-var targetedPedwin: PathFollow2D
+var targeted_pedwin: PathFollow2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	cd_timer = $Timer
@@ -14,12 +14,12 @@ func _process(delta: float) -> void:
 	pedwin_in_range = detect_pedwin()
 	if pedwin_in_range == true && cooldown_ready == true:
 		detect_pedwin()
-		attack_enemy(targetedPedwin)
+		attack_enemy(targeted_pedwin)
 		cooldown_ready = false
 
 func attack_enemy(target):
 	attack_animation(target)
-	targetedPedwin.takeDamage(tower_damage)
+	targeted_pedwin.take_damage(tower_damage)
 	cd_timer.start()
 
 func reset_cooldown():
@@ -44,7 +44,7 @@ func detect_pedwin() -> bool:
 		for pedwin in pedwins:
 			if pedwin.progress > furthest_pedwin_distance:
 				furthest_pedwin_distance = pedwin.progress
-				targetedPedwin = pedwin
+				targeted_pedwin = pedwin
 		return true
 	return false
 	# Return

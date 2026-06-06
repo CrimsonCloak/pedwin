@@ -1,40 +1,38 @@
 extends Node2D
-@export var fishAmount: int = 100
-@export var pedwinsAlive: int
-@export var pedwinsKilled: int = 0
+@export var fish_amount: int = 100
+@export var pedwins_alive: int
+@export var pedwins_killed: int = 0
 @export var pedwins_per_wave: int = 10
-@export var fishCostTower: int = 50
+@export var fish_cost_tower: int = 50
 # Called when the node enters the scene tree for the first time.
 var levelhud
 func _ready() -> void:
-	pass # Replace with function body.
 	levelhud = get_node("../LevelHud")
 	# Set fish_counter to 100
-	set_fish_text(fishAmount)
+	set_fish_text(fish_amount)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	count_alive_pedwins()
 
 func count_alive_pedwins():
-	pedwinsAlive = get_node("../Path2D").get_child_count()
-	set_pedwin_text(pedwinsAlive)
+	pedwins_alive = get_node("../Path2D").get_child_count()
+	set_pedwin_text(pedwins_alive)
 # Functions that write or update UI elements
 
 func set_fish_text(amount: int):
-	var fisCounter = levelhud.find_child("FishCounterText")
-	fisCounter.text = "Fish: %d" % fishAmount
+	var fish_counter = levelhud.find_child("FishCounterText")
+	fish_counter.text = "Fish: %d" % fish_amount
 
 func set_pedwin_text(amount: int):
-	var fisCounter = levelhud.find_child("PedwinRemainingCounterText")
-	fisCounter.text = "Pedwins: %d" % pedwinsKilled
-	
-	
+	var pedwin_counter = levelhud.find_child("PedwinRemainingCounterText")
+	pedwin_counter.text = "Pedwins: %d" % pedwins_killed
+
 # Functions that edit values for game
 
 func gain_fish(amount: int):
-	fishAmount += amount
-	set_fish_text(fishAmount)
+	fish_amount += amount
+	set_fish_text(fish_amount)
 func spend_fish(amount: int):
-	fishAmount -= amount
-	set_fish_text(fishAmount)
+	fish_amount -= amount
+	set_fish_text(fish_amount)
