@@ -13,7 +13,7 @@ config_version=5
 config/name="Pedwin"
 run/main_scene="uid://brkucpi3rtttu"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://Assets/icon.svg"
+config/icon="uid://c3m2fo3leck3e"
 
 [display]
 
