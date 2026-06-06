@@ -4,6 +4,7 @@ var pedwin_prefab: PackedScene = preload("res://Scenes/pedwin.tscn")
 @onready var button: Button = $StartButton
 var pedwin_wave_size: int
 var gameManager
+var victoryConditionsMet: bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	button.pressed.connect (_button_pressed)
@@ -16,21 +17,33 @@ func _button_pressed():
 	set_pedwin_wave_text(pedwin_wave_size)
 	button.disabled = true
 
+func _process(delta: float) -> void:
+	check_victory_condition()
+
 func spawn_enemy():
 	path.add_child(pedwin_prefab.instantiate())
 	pedwin_wave_size -= 1
 	set_pedwin_wave_text(pedwin_wave_size)
 	if pedwin_wave_size == 0:
 		$SpawnTimer.stop()
-		set_victory_text()
-		play_victory_music()
+		
+		if gameManager.pedwinsAlive == 0:
+			victory()
+			play_victory_music()
 		
 func set_pedwin_wave_text(wave_size_remaining):
 	button.text = "Pedwin reinforcements: %d" % wave_size_remaining
-	
-	
-func set_victory_text():
-	button.text = "All reinforcements deployed!"
+	if pedwin_wave_size == 0:
+		button.text = "All reinforcements deployed!"
+
+func check_victory_condition():
+	if pedwin_wave_size == 0 && gameManager.pedwinsAlive == 0:
+		victoryConditionsMet = true
+	if victoryConditionsMet:
+		victory()
+
+func victory():
+	button.text = "Pedwins defeated!"
 	# Set button to do a different function!
 	button.pressed.connect (level_completed)
 	button.disabled = false
