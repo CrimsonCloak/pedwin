@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://clkpicgek7ofx"]
+
+[ext_resource type="Script" uid="uid://c3oolqvfhbbjt" path="res://Scripts/spodr_projectile.gd" id="1_ntdfl"]
+[ext_resource type="Texture2D" uid="uid://cewayfq16cj8f" path="res://Assets/Spodr/Spider_Projectile.png" id="2_ue8mr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k7qig"]
+
+[node name="SpodrProjectile" type="Area2D" unique_id=668082177]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ntdfl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1830920042]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ue8mr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1816579376]
+shape = SubResource("CircleShape2D_k7qig")
+
+[connection signal="area_entered" from="." to="." method="_on_area2D_entered"]

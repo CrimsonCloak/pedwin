@@ -20,6 +20,10 @@ config/icon="uid://c3m2fo3leck3e"
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://clmkuivcila5e"
 
+[layer_names]
+
+2d_physics/layer_2="Pedwins"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

@@ -1,6 +1,6 @@
 extends Node2D
 
-var spodr_cocoon_prefab: PackedScene = preload("res://Scenes/spodr_cocoon.tscn")
+var spodr_cocoon_prefab: PackedScene = preload("res://Scenes/Spodr/spodr_cocoon.tscn")
 var game_manager: Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
