@@ -4,6 +4,7 @@ extends Node2D
 @export var pedwins_killed: int = 0
 @export var pedwins_per_wave: int = 10
 @export var fish_cost_tower: int = 50
+var royalty_total: int = 3
 # Called when the node enters the scene tree for the first time.
 var levelhud
 func _ready() -> void:
@@ -18,6 +19,7 @@ func _process(delta: float) -> void:
 func count_alive_pedwins():
 	pedwins_alive = get_node("../Path2D").get_child_count()
 	set_pedwin_text(pedwins_alive)
+
 # Functions that write or update UI elements
 
 func set_fish_text(amount: int):
@@ -28,6 +30,13 @@ func set_pedwin_text(amount: int):
 	var pedwin_counter = levelhud.find_child("PedwinRemainingCounterText")
 	pedwin_counter.text = "Pedwins: %d" % pedwins_killed
 
+func lose_life():
+	var royalty_healthbar = levelhud.find_child("UI_pedwin_royalty")
+	royalty_healthbar.get_child(0).queue_free()
+	royalty_total -= 1
+	if royalty_total == 0:
+		get_tree().paused = true
+		
 # Functions that edit values for game
 
 func gain_fish(amount: int):

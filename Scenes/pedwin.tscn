@@ -21,8 +21,6 @@ offset_top = -42.0
 offset_right = 16.0
 offset_bottom = -34.0
 pivot_offset = Vector2(-446, -8)
-max_value = 2.0
-value = 2.0
 texture_progress = ExtResource("3_ovojk")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2031673272]
