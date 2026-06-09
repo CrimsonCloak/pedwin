@@ -7,8 +7,11 @@ extends Node2D
 var royalty_total: int = 3
 # Called when the node enters the scene tree for the first time.
 var levelhud
+var gameover_screen
 func _ready() -> void:
 	levelhud = get_node("../LevelHud")
+	gameover_screen = get_node("../GameOverScreen")
+	gameover_screen.get_child(0).visible = false
 	# Set fish_counter to 100
 	set_fish_text(fish_amount)
 
@@ -36,6 +39,9 @@ func lose_life():
 	royalty_total -= 1
 	if royalty_total == 0:
 		get_tree().paused = true
+		get_parent().get_node("StartButton").queue_free()
+		gameover_screen.get_child(0).visible = true
+		print(gameover_screen.get_child(0))
 		
 # Functions that edit values for game
 

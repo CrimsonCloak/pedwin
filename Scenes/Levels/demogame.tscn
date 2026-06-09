@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhnqp8see2fnr"]
 
 [ext_resource type="Script" uid="uid://cur77xedsl4gn" path="res://Scripts/game.gd" id="1_u22c3"]
+[ext_resource type="PackedScene" uid="uid://b56ecdf8excp5" path="res://Scenes/UI/game_over_screen.tscn" id="2_4fbp2"]
 [ext_resource type="Texture2D" uid="uid://cd1km3f1i5gd" path="res://Assets/Background.png" id="2_8vyj5"]
 [ext_resource type="PackedScene" uid="uid://cmw57ycpp3g6g" path="res://Scenes/game_manager.tscn" id="2_pu47x"]
 [ext_resource type="PackedScene" uid="uid://dcgd821vn4q86" path="res://Scenes/empty_plot.tscn" id="3_8vyj5"]
@@ -14,6 +15,13 @@ point_count = 27
 
 [node name="Game" type="Node2D" unique_id=1903733899]
 script = ExtResource("1_u22c3")
+
+[node name="GameOverScreen" parent="." unique_id=825759542 instance=ExtResource("2_4fbp2")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="GameManager" parent="." unique_id=1840653045 instance=ExtResource("2_pu47x")]
 
@@ -36,7 +44,7 @@ offset_bottom = 511.0
 text = "Start Pedwinvasion"
 
 [node name="EmptyPlot" parent="." unique_id=1246639761 instance=ExtResource("3_8vyj5")]
-position = Vector2(190, 382)
+position = Vector2(190, 384)
 
 [node name="EmptyPlot2" parent="." unique_id=1249612798 instance=ExtResource("3_8vyj5")]
 position = Vector2(769, 497)
