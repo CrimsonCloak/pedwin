@@ -9,6 +9,7 @@ var targeted_pedwin: PathFollow2D
 func _ready() -> void:
 	cd_timer = $Timer
 	cd_timer.timeout.connect(reset_cooldown)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pedwin_in_range = detect_pedwin()
@@ -28,7 +29,7 @@ func attack_animation(target):
 	var projectile_instance = tower_projectile.instantiate()
 	projectile_instance.direction = position.direction_to(targeted_pedwin.position)
 	add_child(projectile_instance)
-	#print("Projectile deployed")
+
 func detect_pedwin() -> bool:
 	# Detect a collision with a PathFollow2D (AKA Pedwin enemy)
 	# Get all bodies inside Area2D
@@ -49,7 +50,6 @@ func detect_pedwin() -> bool:
 				targeted_pedwin = pedwin
 		return true
 	return false
-	# Return
 
 func contains_pedwin(arrayOfAreas) -> bool:
 	var pedwin_present = false

@@ -2,14 +2,15 @@ extends Node2D
 
 var spodr_cocoon_prefab: PackedScene = preload("res://Scenes/Spodr/spodr_cocoon.tscn")
 var game_manager: Node2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	game_manager = get_node("/root/Game/GameManager")
 	$Area2D.connect("mouse_entered", self.on_mouse_enter)
 	$Area2D.connect("mouse_exited", self.on_mouse_exit)
 	update_fish_cost_visual()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-
 func _process(delta: float) -> void:
 	update_fish_cost_visual()
 
@@ -46,5 +47,4 @@ func spawn_spodr_cocoon():
 		var spodr_cocoon = spodr_cocoon_prefab.instantiate()
 		self.get_parent().add_child(spodr_cocoon)
 		spodr_cocoon.position = Vector2(self.position)
-		
 		queue_free()

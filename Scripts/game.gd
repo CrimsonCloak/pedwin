@@ -5,6 +5,7 @@ var pedwin_prefab: PackedScene = preload("res://Scenes/pedwin.tscn")
 var pedwin_wave_size: int
 var game_manager
 var victory_conditions_met: bool
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	button.pressed.connect (_button_pressed)
@@ -31,7 +32,7 @@ func spawn_enemy():
 		if game_manager.pedwins_alive == 0:
 			victory()
 			play_victory_music()
-		
+
 func set_pedwin_wave_text(wave_size_remaining):
 	button.text = "Pedwin reinforcements: %d" % wave_size_remaining
 	if pedwin_wave_size == 0:
@@ -47,10 +48,9 @@ func victory():
 	# Set button to do a different function!
 	button.pressed.connect (level_completed)
 	button.disabled = false
-	
+
 func level_completed():
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn") # TODO: replace with main menu return function
-	
 
 func play_victory_music():
 	pass

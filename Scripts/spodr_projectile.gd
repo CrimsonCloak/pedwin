@@ -10,9 +10,7 @@ func _process(delta: float) -> void:
 
 func _on_area2D_entered(area):
 	var collision_layer = area.get_collision_layer()
-	#print(collision_layer)
 	if collision_layer == 3:
-		print("Hit a Pedwin!")
 		var targeted_pedwin = area.get_parent()
 		targeted_pedwin.take_damage(projectile_damage)
 		queue_free()

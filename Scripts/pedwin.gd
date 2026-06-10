@@ -4,17 +4,12 @@ extends PathFollow2D
 @export var health: int
 @export var fish_value: int = 10
 @export var game_manager = Node2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	health = max_health
 	$healthBar.max_value = max_health
 	game_manager = get_node("/root/Game/GameManager")
-
-#func _input(event):
-	#if event is InputEventMouseButton:
-		#if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			#if $Sprite2D.is_pixel_opaque(get_local_mouse_position()):
-				#takeDamage(1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:	
