@@ -1,20 +1,30 @@
 [gd_scene format=3 uid="uid://brkucpi3rtttu"]
 
-[ext_resource type="Texture2D" uid="uid://cd1km3f1i5gd" path="res://Assets/Background.png" id="1_1rerr"]
+[ext_resource type="Texture2D" uid="uid://b6h3ttwrjyk4b" path="res://Assets/Background_grey.png" id="1_xhh6f"]
 [ext_resource type="Script" uid="uid://dtfxearnict7v" path="res://Scripts/startmenu_buttons.gd" id="2_xhh6f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhh6f"]
+bg_color = Color(0.72156864, 0.60784316, 0.39215687, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_cayip"]
+font_size = 76
 
 [node name="Menu" type="Node2D" unique_id=1607660690]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=900643263]
 position = Vector2(577, 324)
 scale = Vector2(0.6009259, 0.6009259)
-texture = ExtResource("1_1rerr")
+texture = ExtResource("1_xhh6f")
 
 [node name="UI_elements" type="HBoxContainer" parent="Background" unique_id=2086386066]
-offset_left = -482.58856
-offset_top = -46.59478
-offset_right = 370.9093
-offset_bottom = 43.26658
+offset_left = -484.25272
+offset_top = 49.922943
+offset_right = 369.24515
+offset_bottom = 139.7843
 theme_override_constants/separation = 28
 alignment = 1
 script = ExtResource("2_xhh6f")
@@ -47,6 +57,8 @@ offset_bottom = 242.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 86
+theme_override_styles/normal = SubResource("StyleBoxFlat_xhh6f")
 text = "PEDWIN"
+label_settings = SubResource("LabelSettings_cayip")
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bhnqp8see2fnr"]
 
 [ext_resource type="Script" uid="uid://cur77xedsl4gn" path="res://Scripts/game.gd" id="1_u22c3"]
-[ext_resource type="Texture2D" uid="uid://cd1km3f1i5gd" path="res://Assets/Background.png" id="2_8vyj5"]
 [ext_resource type="PackedScene" uid="uid://cmw57ycpp3g6g" path="res://Scenes/game_manager.tscn" id="2_pu47x"]
 [ext_resource type="PackedScene" uid="uid://dcgd821vn4q86" path="res://Scenes/empty_plot.tscn" id="3_8vyj5"]
+[ext_resource type="Texture2D" uid="uid://b6h3ttwrjyk4b" path="res://Assets/Background_grey.png" id="3_lrg74"]
 [ext_resource type="PackedScene" uid="uid://br4vn4h68fivi" path="res://Scenes/UI/level_hud.tscn" id="4_f2hrv"]
 
 [sub_resource type="Curve2D" id="Curve2D_qxrlw"]
@@ -20,7 +20,7 @@ script = ExtResource("1_u22c3")
 [node name="Background" type="Sprite2D" parent="." unique_id=1396405459]
 position = Vector2(577, 325)
 scale = Vector2(0.6009259, 0.6009259)
-texture = ExtResource("2_8vyj5")
+texture = ExtResource("3_lrg74")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1841170749]
 curve = SubResource("Curve2D_qxrlw")
