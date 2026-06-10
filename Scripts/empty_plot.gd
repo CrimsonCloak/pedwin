@@ -18,7 +18,6 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if $Sprite2D.get_rect().has_point(to_local(event.position)):
-				print ("Clicked!")
 				spawn_spodr_cocoon()
 
 func on_mouse_enter():

@@ -28,7 +28,6 @@ func spawn_enemy():
 	set_pedwin_wave_text(pedwin_wave_size)
 	if pedwin_wave_size == 0:
 		$SpawnTimer.stop()
-		
 		if game_manager.pedwins_alive == 0:
 			victory()
 			play_victory_music()
