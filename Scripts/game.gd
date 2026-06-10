@@ -18,7 +18,8 @@ func _button_pressed():
 	button.disabled = true
 
 func _process(delta: float) -> void:
-	check_victory_condition()
+	if !victory_conditions_met:
+		check_victory_condition()
 
 func spawn_enemy():
 	path.add_child(pedwin_prefab.instantiate())
@@ -39,7 +40,6 @@ func set_pedwin_wave_text(wave_size_remaining):
 func check_victory_condition():
 	if pedwin_wave_size == 0 && game_manager.pedwins_alive == 0:
 		victory_conditions_met = true
-	if victory_conditions_met:
 		victory()
 
 func victory():
