@@ -34,6 +34,7 @@ offset_top = 452.0
 offset_right = 638.0
 offset_bottom = 511.0
 text = "Start Pedwinvasion"
+autowrap_mode = 2
 
 [node name="EmptyPlot" parent="." unique_id=1246639761 instance=ExtResource("3_8vyj5")]
 position = Vector2(190, 384)

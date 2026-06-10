@@ -32,11 +32,13 @@ script = ExtResource("2_xhh6f")
 [node name="Start Button" type="Button" parent="Background/UI_elements" unique_id=2079672986]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
 text = "Start game"
 
 [node name="Quit Button" type="Button" parent="Background/UI_elements" unique_id=383656718]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
 text = "Quit game"
 
 [node name="Credits Button" type="Button" parent="Background/UI_elements" unique_id=815989697]
