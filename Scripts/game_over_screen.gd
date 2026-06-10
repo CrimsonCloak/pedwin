@@ -7,17 +7,11 @@ extends Control
 func _ready() -> void:
 	retry_button.pressed.connect(restart_level)
 	main_menu_button.pressed.connect(return_to_main)
-	self.visible = false # TODO figure out best practice for this
-	canvas.visible = false
-func popup_game_over():
-	self.visible = true # TODO figure out best practice for thi
-	canvas.visible = true
 
 func restart_level():
 	print("Restarting level")
 	get_tree().paused = false
 	get_tree().reload_current_scene()
-	
 
 func return_to_main():
 	print("Returning to main menu")
