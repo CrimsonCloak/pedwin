@@ -11,7 +11,6 @@ var gameover_screen
 func _ready() -> void:
 	levelhud = get_node("../LevelHud")
 	gameover_screen = get_node("../GameOverScreen")
-	gameover_screen.get_child(0).visible = false
 	# Set fish_counter to 100
 	set_fish_text(fish_amount)
 
@@ -40,7 +39,7 @@ func lose_life():
 	if royalty_total == 0:
 		get_tree().paused = true
 		get_parent().get_node("StartButton").queue_free()
-		gameover_screen.get_child(0).visible = true
+		gameover_screen.popup_game_over()
 		print(gameover_screen.get_child(0))
 		
 # Functions that edit values for game
