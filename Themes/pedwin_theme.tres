@@ -14,6 +14,13 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7uxj8"]
+bg_color = Color(0.6117647, 0.35686275, 0.23529412, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_temba"]
 bg_color = Color(0.72156864, 0.60784316, 0.39215687, 1)
 corner_radius_top_left = 20
@@ -24,4 +31,5 @@ corner_radius_bottom_left = 20
 [resource]
 Button/styles/hover = SubResource("StyleBoxFlat_cmd0r")
 Button/styles/normal = SubResource("StyleBoxFlat_7cq25")
+Button/styles/pressed = SubResource("StyleBoxFlat_7uxj8")
 Panel/styles/panel = SubResource("StyleBoxFlat_temba")
