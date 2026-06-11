@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://hc3tih4l33li"]
+
+[ext_resource type="Script" uid="uid://2y5s8x4dnv3c" path="res://Scripts/pause_screen.gd" id="1_ol52j"]
+
+[node name="LevelPauseScreen" type="Control" unique_id=1887319129]
+process_mode = 3
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ol52j")
+
+[node name="Panel" type="Panel" parent="." unique_id=696541737]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 144.0
+offset_right = 736.0
+offset_bottom = 398.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=1115321476]
+layout_mode = 0
+offset_right = 373.0
+offset_bottom = 23.0
+text = "Game Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=1487077593]
+layout_mode = 1
+offset_left = 3.0
+offset_top = 56.0
+offset_right = 375.0
+offset_bottom = 249.0
+theme_override_constants/v_separation = 62
+
+[node name="Label" type="Label" parent="Panel/GridContainer" unique_id=966183879]
+visible = false
+layout_mode = 2
+text = "Game paused"
+
+[node name="Resume" type="Button" parent="Panel/GridContainer" unique_id=1843439170]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Resume game"
+
+[node name="Restart" type="Button" parent="Panel/GridContainer" unique_id=689795570]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Restart level"
+
+[node name="Return" type="Button" parent="Panel/GridContainer" unique_id=462700262]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Return to main menu"
