@@ -35,11 +35,6 @@ offset_right = 375.0
 offset_bottom = 249.0
 theme_override_constants/v_separation = 62
 
-[node name="Label" type="Label" parent="Panel/GridContainer" unique_id=966183879]
-visible = false
-layout_mode = 2
-text = "Game paused"
-
 [node name="Resume" type="Button" parent="Panel/GridContainer" unique_id=1843439170]
 layout_mode = 2
 size_flags_horizontal = 6
