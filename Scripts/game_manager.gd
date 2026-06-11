@@ -7,6 +7,7 @@ extends Node2D
 var royalty_total: int = 3
 var levelhud
 var gameover_screen_prefab = preload("res://Scenes/UI/game_over_screen.tscn")
+var pause_menu_prefab = preload("res://Scenes/UI/level_pause_screen.tscn")
 
 func _ready() -> void:
 	levelhud = get_node("../LevelHud")
@@ -39,6 +40,10 @@ func lose_life():
 		get_parent().get_node("StartButton").queue_free()
 		var gameover_screen = gameover_screen_prefab.instantiate()
 		self.add_child(gameover_screen)
+
+func pause_menu():
+	var pause_screen = pause_menu_prefab.instantiate()
+	self.add_child(pause_screen)
 
 # Functions that edit values for game
 func gain_fish(amount: int):

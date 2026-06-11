@@ -21,6 +21,10 @@ func _button_pressed():
 func _process(delta: float) -> void:
 	if !victory_conditions_met:
 		check_victory_condition()
+	
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		game_manager.pause_menu()
 
 func spawn_enemy():
 	path.add_child(pedwin_prefab.instantiate())
