@@ -2,6 +2,7 @@ extends Node2D
 var pedwin_prefab: PackedScene = preload("res://Scenes/pedwin.tscn")
 @onready var path: Path2D = $Path2D
 @onready var button: Button = $StartButton
+@onready var wave_info
 var pedwin_wave_size: int
 var game_manager
 var victory_conditions_met: bool
@@ -11,6 +12,9 @@ func _ready():
 	button.pressed.connect (_button_pressed)
 	game_manager = get_node("/root/Game/GameManager")
 	pedwin_wave_size = game_manager.pedwins_per_wave
+	wave_info = read_wave_data()
+	print(wave_info)
+	print(typeof(wave_info))
 
 func _button_pressed():
 	$SpawnTimer.timeout.connect(spawn_enemy)
@@ -54,6 +58,21 @@ func victory():
 
 func level_completed():
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn") # TODO: replace with main menu return function
+
+func read_wave_data():
+	var file = FileAccess.open("res://Scenes/Levels/Leveldata/demolevel_waves.json", FileAccess.READ)
+	var json_text = file.get_as_text()
+	file.close()
+	var data
+	var json = JSON.new()
+	var error = json.parse_string(json_text)
+
+	if error == OK:
+		data = json.data
+		print(data)  # This will print the parsed data
+	else:
+		print("JSON Parse Error: ", json.get_error_message())
+	return data
 
 func play_victory_music():
 	pass

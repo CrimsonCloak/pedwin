@@ -1,0 +1,11 @@
+{
+"wave1": {
+"enemies": [
+{ "type": "pedwin", "count": 5 }
+]
+},
+"wave2": {
+"enemies": [
+{ "type": "pedwin", "count": 10 }
+]}
+}

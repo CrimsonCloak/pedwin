@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cur77xedsl4gn" path="res://Scripts/game.gd" id="1_5j5u1"]
 [ext_resource type="PackedScene" uid="uid://cmw57ycpp3g6g" path="res://Scenes/game_manager.tscn" id="2_tnuy3"]
 [ext_resource type="Texture2D" uid="uid://m11wjyhypels" path="res://Assets/Level2.png" id="3_3f8mu"]
+[ext_resource type="PackedScene" uid="uid://dcgd821vn4q86" path="res://Scenes/empty_plot.tscn" id="5_5j5u1"]
 [ext_resource type="PackedScene" uid="uid://br4vn4h68fivi" path="res://Scenes/UI/level_hud.tscn" id="5_16px4"]
 
 [sub_resource type="Curve2D" id="Curve2D_qxrlw"]
@@ -36,3 +37,18 @@ text = "Start Pedwinvasion"
 autowrap_mode = 2
 
 [node name="LevelHud" parent="." unique_id=1502562895 instance=ExtResource("5_16px4")]
+
+[node name="EmptyPlot" parent="." unique_id=1246639761 instance=ExtResource("5_5j5u1")]
+position = Vector2(625, 451)
+
+[node name="EmptyPlot2" parent="." unique_id=879965492 instance=ExtResource("5_5j5u1")]
+position = Vector2(174, 355)
+
+[node name="EmptyPlot3" parent="." unique_id=1175932722 instance=ExtResource("5_5j5u1")]
+position = Vector2(265, 124)
+
+[node name="EmptyPlot4" parent="." unique_id=888735667 instance=ExtResource("5_5j5u1")]
+position = Vector2(783, 178)
+
+[node name="EmptyPlot5" parent="." unique_id=1137420559 instance=ExtResource("5_5j5u1")]
+position = Vector2(476, 442)
