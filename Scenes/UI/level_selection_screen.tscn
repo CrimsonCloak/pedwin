@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b6h3ttwrjyk4b" path="res://Assets/Background_grey.png" id="1_162a4"]
 [ext_resource type="Script" uid="uid://bw818ekxhf8ot" path="res://Scripts/level_selection_screen.gd" id="1_kelw6"]
 [ext_resource type="Texture2D" uid="uid://cpglqn11br3y8" path="res://Assets/Level1.png" id="2_i6ngy"]
+[ext_resource type="Texture2D" uid="uid://m11wjyhypels" path="res://Assets/Level2.png" id="3_7s332"]
 
 [node name="LevelSelectionScreen" type="Control" unique_id=278618105]
 layout_mode = 3
@@ -49,13 +50,13 @@ alignment = 1
 
 [node name="Level preview" type="TextureRect" parent="Panel/HBoxContainer/Level2" unique_id=100612347]
 layout_mode = 2
-texture = ExtResource("1_162a4")
+texture = ExtResource("3_7s332")
 expand_mode = 5
 
 [node name="StartLevel" type="Button" parent="Panel/HBoxContainer/Level2" unique_id=2063828446]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Placeholder
+text = "Level 2 - Russian Winter
 "
 
 [node name="Level3" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=44756299]

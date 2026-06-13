@@ -4,7 +4,6 @@ extends Control
 @onready var level2_button: Button = get_node("Panel/HBoxContainer/Level2/StartLevel")
 @onready var level3_button: Button = get_node("Panel/HBoxContainer/Level3/StartLevel")
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	return_button.pressed.connect(return_main)
@@ -19,7 +18,7 @@ func start_level1():
 	get_tree().change_scene_to_file("res://Scenes/Levels/level1.tscn")
 
 func start_level2():
-	get_tree().change_scene_to_file("res://Scenes/Levels/demogame.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/level2.tscn")
 
 func start_level3():
 	get_tree().change_scene_to_file("res://Scenes/Levels/demogame.tscn")
