@@ -16,7 +16,7 @@ func return_main():
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 
 func start_level1():
-	get_tree().change_scene_to_file("res://Scenes/Levels/demogame.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/level1.tscn")
 
 func start_level2():
 	get_tree().change_scene_to_file("res://Scenes/Levels/demogame.tscn")

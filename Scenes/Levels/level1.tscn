@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cpjtts2nw66da"]
+
+[ext_resource type="Script" uid="uid://cur77xedsl4gn" path="res://Scripts/game.gd" id="1_c0r4e"]
+[ext_resource type="PackedScene" uid="uid://cmw57ycpp3g6g" path="res://Scenes/game_manager.tscn" id="2_m0h5h"]
+[ext_resource type="Texture2D" uid="uid://cpglqn11br3y8" path="res://Assets/Level1.png" id="3_c0r4e"]
+[ext_resource type="PackedScene" uid="uid://dcgd821vn4q86" path="res://Scenes/empty_plot.tscn" id="4_i36j2"]
+[ext_resource type="PackedScene" uid="uid://br4vn4h68fivi" path="res://Scenes/UI/level_hud.tscn" id="5_hkfpk"]
+
+[sub_resource type="Curve2D" id="Curve2D_qxrlw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 11, 310, 0, 0, 0, 0, 110, 323, 0, 0, 0, 0, 87, 441, 0, 0, 0, 0, 85, 558, 0, 0, 0, 0, 141, 602, 0, 0, 0, 0, 273, 605, 0, 0, 0, 0, 284, 564, 0, 0, 0, 0, 295, 122, 0, 0, 0, 0, 321, 95, 0, 0, 0, 0, 589, 98, 0, 0, 0, 0, 655, 119, 0, 0, 0, 0, 683, 143, 0, 0, 0, 0, 716, 312, 0, 0, 0, 0, 832, 512, 0, 0, 0, 0, 870, 529, 0, 0, 0, 0, 997, 520, 0, 0, 0, 0, 1031, 484, 0, 0, 0, 0, 1040, 429, 0, 0, 0, 0, 1043, 363, 0, 0, 0, 0, 1035, 235, 0, 0, 0, 0, 1035, 189)
+}
+point_count = 21
+
+[node name="Game" type="Node2D" unique_id=1903733899]
+script = ExtResource("1_c0r4e")
+
+[node name="GameManager" parent="." unique_id=1840653045 instance=ExtResource("2_m0h5h")]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1396405459]
+position = Vector2(577, 325)
+scale = Vector2(0.6009259, 0.6009259)
+texture = ExtResource("3_c0r4e")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1841170749]
+curve = SubResource("Curve2D_qxrlw")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1759072209]
+wait_time = 1.5
+
+[node name="StartButton" type="Button" parent="." unique_id=307434285]
+offset_left = 468.0
+offset_top = 452.0
+offset_right = 638.0
+offset_bottom = 511.0
+text = "Start Pedwinvasion"
+autowrap_mode = 2
+
+[node name="EmptyPlot" parent="." unique_id=1246639761 instance=ExtResource("4_i36j2")]
+position = Vector2(178, 473)
+
+[node name="EmptyPlot2" parent="." unique_id=1249612798 instance=ExtResource("4_i36j2")]
+position = Vector2(966, 285)
+
+[node name="LevelHud" parent="." unique_id=1502562895 instance=ExtResource("5_hkfpk")]
+
+[node name="EmptyPlot5" parent="." unique_id=182507889 instance=ExtResource("4_i36j2")]
+position = Vector2(712, 443)
+
+[node name="EmptyPlot6" parent="." unique_id=2052110965 instance=ExtResource("4_i36j2")]
+position = Vector2(537, 169)

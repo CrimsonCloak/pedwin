@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b6h3ttwrjyk4b" path="res://Assets/Background_grey.png" id="1_162a4"]
 [ext_resource type="Script" uid="uid://bw818ekxhf8ot" path="res://Scripts/level_selection_screen.gd" id="1_kelw6"]
+[ext_resource type="Texture2D" uid="uid://cpglqn11br3y8" path="res://Assets/Level1.png" id="2_i6ngy"]
 
 [node name="LevelSelectionScreen" type="Control" unique_id=278618105]
 layout_mode = 3
@@ -31,13 +32,14 @@ alignment = 1
 
 [node name="Level preview" type="TextureRect" parent="Panel/HBoxContainer/Level1" unique_id=123060680]
 layout_mode = 2
-texture = ExtResource("1_162a4")
+texture = ExtResource("2_i6ngy")
 expand_mode = 5
 
 [node name="StartLevel" type="Button" parent="Panel/HBoxContainer/Level1" unique_id=2134277698]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Demo Level"
+text = "Level 1 - Swampland
+"
 
 [node name="Level2" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=62467847]
 layout_mode = 2
@@ -53,7 +55,8 @@ expand_mode = 5
 [node name="StartLevel" type="Button" parent="Panel/HBoxContainer/Level2" unique_id=2063828446]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Demo Level"
+text = "Placeholder
+"
 
 [node name="Level3" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=44756299]
 layout_mode = 2
@@ -69,7 +72,7 @@ expand_mode = 5
 [node name="StartLevel" type="Button" parent="Panel/HBoxContainer/Level3" unique_id=914534340]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Demo Level"
+text = "Placeholder"
 
 [node name="Return button" type="Button" parent="." unique_id=357894673]
 layout_mode = 0
