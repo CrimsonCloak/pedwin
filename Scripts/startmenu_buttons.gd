@@ -8,7 +8,7 @@ func _ready() -> void:
 	start_button.pressed.connect(start_game)
 	quit_button.pressed.connect(quit_game)
 func start_game():
-	get_tree().change_scene_to_file("res://Scenes/Levels/demogame.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/level_selection_screen.tscn")
 
 func quit_game():
 	get_tree().quit()
