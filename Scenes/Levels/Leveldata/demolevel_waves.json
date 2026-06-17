@@ -1,11 +1,12 @@
 {
-"wave1": {
-"enemies": [
-{ "type": "pedwin", "count": 5 }
-]
-},
-"wave2": {
-"enemies": [
-{ "type": "pedwin", "count": 10 }
-]}
+  "wave1": [
+	{
+	  "pedwin": 5
+	}
+  ],
+  "wave2": [
+	{
+	  "pedwin": 7
+	}
+  ]
 }

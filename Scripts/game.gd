@@ -6,16 +6,16 @@ var pedwin_prefab: PackedScene = preload("res://Scenes/pedwin.tscn")
 var pedwin_wave_size: int
 var game_manager
 var victory_conditions_met: bool
+const WAVE_INFO_FILE = "res://Scenes/Levels/Leveldata/demolevel_waves.json"
+var wave_data_dict
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	button.pressed.connect (_button_pressed)
 	game_manager = get_node("/root/Game/GameManager")
 	pedwin_wave_size = game_manager.pedwins_per_wave
-	wave_info = read_wave_data()
-	print(wave_info)
-	print(typeof(wave_info))
-
+	read_wave_data()
+	calculate_wave_amount()
 func _button_pressed():
 	$SpawnTimer.timeout.connect(spawn_enemy)
 	$SpawnTimer.start()
@@ -58,21 +58,31 @@ func victory():
 
 func level_completed():
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn") # TODO: replace with main menu return function
-
+	
 func read_wave_data():
-	var file = FileAccess.open("res://Scenes/Levels/Leveldata/demolevel_waves.json", FileAccess.READ)
-	var json_text = file.get_as_text()
-	file.close()
-	var data
-	var json = JSON.new()
-	var error = json.parse_string(json_text)
+		var wave_info_file = FileAccess.open(WAVE_INFO_FILE,FileAccess.READ)
+		var json = JSON.new()
+		var parse_result = json.parse(wave_info_file.get_as_text())
+		print(parse_result)
+		if parse_result != OK:
+			print("JSON Parse Error: ", json.get_error_message(), " in ", wave_info_file.get_as_text(), " at line ", json.get_error_line())
+		else:
+			var json_data: Dictionary = json.data
+			wave_data_dict = json_data
 
-	if error == OK:
-		data = json.data
-		print(data)  # This will print the parsed data
-	else:
-		print("JSON Parse Error: ", json.get_error_message())
-	return data
 
+func calculate_wave_amount():
+	
+	# Count waves
+	var wave_count = wave_data_dict.size()
+	print("Wave count is: " + str(wave_count))
+	
+	print(wave_data_dict["wave1"].get(0).get("pedwin"))
+	print(wave_data_dict["wave2"].get(0).get("pedwin"))
+	
+	# Loop over every wave
+	# Loop over every enemies object
+	# Spawn the given Pedwin
+	
 func play_victory_music():
 	pass
